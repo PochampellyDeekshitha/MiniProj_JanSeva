@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/language.css";
 
@@ -6,16 +6,28 @@ function LanguageSelect() {
   const [language, setLanguage] = useState("");
   const navigate = useNavigate();
 
+  // 🔐 Check if user is logged in
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      alert("Please login first");
+      navigate("/");
+    }
+  }, [navigate]);
+
   const handleContinue = () => {
     if (language === "") {
       alert("Please select a language");
       return;
     }
+
     localStorage.setItem("language", language);
-    // Later we can store in localStorage or backend
-    console.log("selectedLanguage:", language);
-    // For now just move forward (dashboard later)
+
+    console.log("Selected Language:", language);
+
     alert("Language Selected: " + language);
+
     navigate("/dashboard");
   };
 
