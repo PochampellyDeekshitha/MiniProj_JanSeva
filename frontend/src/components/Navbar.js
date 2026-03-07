@@ -16,13 +16,6 @@ function Navbar() {
     "English",
     "Hindi",
     "Telugu",
-    "Tamil",
-    "Marathi",
-    "Kannada",
-    "Malayalam",
-    "Bengali",
-    "Gujarati",
-    "Punjabi"
   ];
 
   const handleLanguageChange = (lang) => {

@@ -45,14 +45,6 @@ function LanguageSelect() {
             <option value="English">English</option>
             <option value="Hindi">Hindi (हिंदी)</option>
             <option value="Telugu">Telugu (తెలుగు)</option>
-            <option value="Tamil">Tamil (தமிழ்)</option>
-            <option value="Kannada">Kannada (ಕನ್ನಡ)</option>
-            <option value="Malayalam">Malayalam (മലയാളം)</option>
-            <option value="Marathi">Marathi (मराठी)</option>
-            <option value="Bengali">Bengali (বাংলা)</option>
-            <option value="Gujarati">Gujarati (ગુજરાતી)</option>
-            <option value="Punjabi">Punjabi (ਪੰਜਾਬੀ)</option>
-            <option value="Odia">Odia (ଓଡ଼ିଆ)</option>
           </select>
         </div>
 

@@ -9,7 +9,7 @@ import Healthcare from "../pages/Healthcare";
 import Education from "../pages/Education";
 import Farmer from "../pages/Farmer";
 import Senior from "../pages/Senior";
-import AskAI from "../pages/AskAI";
+import FAQPage from "../pages/FAQPage";
 
 function AppRoutes() {
   return (
@@ -22,7 +22,7 @@ function AppRoutes() {
       <Route path="/education" element={<Education />} />
       <Route path="/farmer" element={<Farmer />} />
       <Route path="/senior" element={<Senior />} />
-      <Route path="/askai" element={<AskAI />} />
+      <Route path="/faq" element={<FAQPage />} />
     </Routes>
   );
 }
