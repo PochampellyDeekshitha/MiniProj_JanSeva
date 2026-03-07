@@ -1,99 +1,120 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // <-- import translation hook
 import Navbar from "../components/Navbar";
 import "../css/dashboard.css";
 import FAQItem from "../components/FAQItem";
 
+// Optional: Language selector component inside Dashboard
+function LanguageSelector() {
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lang) => i18n.changeLanguage(lang);
+
+  return (
+    <div className="language-selector">
+      <button onClick={() => changeLanguage("en")}>English</button>
+      <button onClick={() => changeLanguage("hi")}>हिंदी</button>
+      <button onClick={() => changeLanguage("te")}>తెలుగు</button>
+    </div>
+  );
+}
+
 function Dashboard() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
     <div className="dashboard-container">
       <Navbar />
+   {/*     <LanguageSelector />   <-- Add language switcher */}
 
+      {/* --- Welcome Section --- */}
       <section className="welcome-section">
-        <h1>Welcome, Citizen!</h1>
-        <p>How can we assist you today?</p>
+        <h1>{t("welcomeMessage")}</h1>
+        <p>{t("assistMessage")}</p>
 
         <div className="search-box">
           <input
             type="text"
-            placeholder="Ask about pension, legal case, scholarship..."
+            placeholder={t("searchPlaceholder")}
           />
           <span className="mic-icon">🎤</span>
         </div>
       </section>
 
+      {/* --- Category Section --- */}
       <section className="category-section">
-        <div className="category-card" onClick={() => navigate("/legal")}>⚖ Legal</div>
-        <div className="category-card" onClick={() => navigate("/healthcare")}>🏥 Healthcare</div>
-        <div className="category-card" onClick={() => navigate("/education")}>🎓 Education</div>
-        <div className="category-card" onClick={() => navigate("/farmer")}>🌾 Farmer</div>
-        <div className="category-card" onClick={() => navigate("/senior")}>♿ Senior</div>
+        <div className="category-card" onClick={() => navigate("/legal")}>⚖ {t("legal")}</div>
+        <div className="category-card" onClick={() => navigate("/healthcare")}>🏥 {t("healthcare")}</div>
+        <div className="category-card" onClick={() => navigate("/education")}>🎓 {t("education")}</div>
+        <div className="category-card" onClick={() => navigate("/farmer")}>🌾 {t("farmer")}</div>
+        <div className="category-card" onClick={() => navigate("/senior")}>♿ {t("senior")}</div>
       </section>
 
-{/* --- How It Works Section --- */}
-<section className="how-it-works">
-  <div className="container">
-    <h2>How Legal Assistance Works</h2>
-    <p>No appointments or waiting rooms—get guidance anytime, anywhere.</p>
+      {/* --- How It Works Section --- */}
+      <section className="how-it-works">
+        <div className="container">
+          <h2>{t("howItWorksTitle")}</h2>
+          <p>{t("howItWorksDesc")}</p>
 
-    <div className="steps">
-      <div className="step-card">
-        <div className="step-icon">📝</div>
-        <h3>Step 1: Ask Your Question</h3>
-        <p>Type or speak your legal query in simple language. No complex legal terms required.</p>
-      </div>
-      <div className="step-card">
-        <div className="step-icon">🤖</div>
-        <h3>Step 2: AI Analysis</h3>
-        <p>Our AI evaluates your query against Indian laws, regulations, and precedents.</p>
-      </div>
-      <div className="step-card">
-        <div className="step-icon">✅</div>
-        <h3>Step 3: Get Guidance</h3>
-        <p>Receive actionable advice that helps you understand your legal options clearly.</p>
-      </div>
-    </div>
-  </div>
-</section>
+          <div className="steps">
+            <div className="step-card">
+              <div className="step-icon">📝</div>
+              <h3>{t("step1Title")}</h3>
+              <p>{t("step1Desc")}</p>
+            </div>
+            <div className="step-card">
+              <div className="step-icon">🤖</div>
+              <h3>{t("step2Title")}</h3>
+              <p>{t("step2Desc")}</p>
+            </div>
+            <div className="step-card">
+              <div className="step-icon">✅</div>
+              <h3>{t("step3Title")}</h3>
+              <p>{t("step3Desc")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-{/* --- FAQs Section --- */}
-<section className="faq-section">
-  <div className="container">
-    <h2>Frequently Asked Questions</h2>
-    <p>Have questions about JanSeva services? Click a question to view the answer.</p>
+      {/* --- FAQs Section --- */}
+      <section className="faq-section">
+        <div className="container">
+          <h2>{t("faqTitle")}</h2>
+          <p>{t("faqDesc")}</p>
 
-    <div className="faq-items">
-      <FAQItem 
-        question="Is JanSeva free for all citizens?" 
-        answer="Yes! Most services provided on JanSeva are free for Indian citizens." 
-      />
-      <FAQItem 
-        question="Do I need to create an account to use JanSeva?" 
-        answer="Some features require signing in, but general information and search are accessible without an account." 
-      />
-      <FAQItem 
-        question="Which services can I access through JanSeva?" 
-        answer="You can access legal guidance, healthcare information, education support, farmer schemes, and senior citizen aid." 
-      />
-      <FAQItem 
-        question="Is the AI assistant a substitute for legal or medical professionals?" 
-        answer="No. The AI provides guidance and information but is not a replacement for professional legal, medical, or government advice." 
-      />
-      <FAQItem 
-        question="How can I report an issue or provide feedback?" 
-        answer="Use the Contact or Help section on JanSeva to submit your queries or feedback." 
-      />
-    </div>
+          <div className="faq-items">
+            <FAQItem 
+              question={t("faq1Question")} 
+              answer={t("faq1Answer")} 
+            />
+            <FAQItem 
+              question={t("faq2Question")} 
+              answer={t("faq2Answer")} 
+            />
+            <FAQItem 
+              question={t("faq3Question")} 
+              answer={t("faq3Answer")} 
+            />
+            <FAQItem 
+              question={t("faq4Question")} 
+              answer={t("faq4Answer")} 
+            />
+            <FAQItem 
+              question={t("faq5Question")} 
+              answer={t("faq5Answer")} 
+            />
+          </div>
 
-    <p className="view-all" onClick={() => navigate("/faq")}>View all FAQs →</p>
-    
-  </div>
-</section>
+          <p className="view-all" onClick={() => navigate("/faq")}>
+            {t("viewAllFaqs")} →
+          </p>
+        </div>
+      </section>
 
       <footer className="dashboard-footer">
-        Email: support@janseva.in | Helpline: 1800-XXX-XXXX
+        {t("footerEmail")} | {t("footerHelpline")}
       </footer>
     </div>
   );

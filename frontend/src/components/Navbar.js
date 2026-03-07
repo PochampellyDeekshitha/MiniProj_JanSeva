@@ -1,28 +1,37 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "../css/dashboard.css";
 
 function Navbar() {
   const navigate = useNavigate();
-
+  const { i18n } = useTranslation();
   const phoneNumber = "+91 ****** 1234";
 
   const [showDropdown, setShowDropdown] = useState(false);
+
+  // get saved language or default to English
   const [selectedLanguage, setSelectedLanguage] = useState(
-    localStorage.getItem("selectedLanguage") || "English"
+    localStorage.getItem("selectedLanguage") || "en"
   );
 
+  // Map display name to language code
   const languages = [
-    "English",
-    "Hindi",
-    "Telugu",
+    { name: "English", code: "en" },
+    { name: "Hindi", code: "hi" },
+    { name: "Telugu", code: "te" },
   ];
 
-  const handleLanguageChange = (lang) => {
-    setSelectedLanguage(lang);
-    localStorage.setItem("selectedLanguage", lang);
-    setShowDropdown(false);
+  const handleLanguageChange = (langCode) => {
+    i18n.changeLanguage(langCode); // change app language
+    setSelectedLanguage(langCode); // update state
+    localStorage.setItem("selectedLanguage", langCode); // persist selection
+    setShowDropdown(false); // close dropdown
   };
+
+  // Display the selected language's name in the header
+  const selectedLanguageName =
+    languages.find((l) => l.code === selectedLanguage)?.name || "English";
 
   return (
     <div className="dashboard-header">
@@ -37,7 +46,7 @@ function Navbar() {
       <div className="header-right">
         <div className="language-dropdown">
           <div onClick={() => setShowDropdown(!showDropdown)}>
-            {selectedLanguage} ▼
+            {selectedLanguageName} ▼
           </div>
 
           {showDropdown && (
@@ -46,9 +55,9 @@ function Navbar() {
                 <div
                   key={index}
                   className="dropdown-item"
-                  onClick={() => handleLanguageChange(lang)}
+                  onClick={() => handleLanguageChange(lang.code)}
                 >
-                  {lang}
+                  {lang.name}
                 </div>
               ))}
             </div>

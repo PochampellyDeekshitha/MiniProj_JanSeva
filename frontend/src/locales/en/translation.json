@@ -1,0 +1,85 @@
+{
+  "welcomeMessage": "Welcome, Citizen!",
+  "assistMessage": "How can we assist you today?",
+  "searchPlaceholder": "Ask about pension, legal case, scholarship...",
+  "legal": "Legal",
+  "legalPage": {
+  "title": "⚖️ Legal Assistance",
+  "description": "Information about legal rights, government laws, and legal support services will appear here."
+},
+  "healthcare": "Healthcare",
+  "healthcarePage": {
+  "title": "🏥 Healthcare Assistance",
+  "description": "Information about health services, schemes, and support will appear here."
+},
+  "education": "Education",
+  "educationPage": {
+  "title": "🎓 Education Assistance",
+  "description": "Education schemes and information will appear here."
+},
+  "farmer": "Farmer",
+  "farmerPage": {
+  "title": "🌾 Farmer Assistance",
+  "description": "Information about farmer schemes, subsidies, and support services will appear here."
+},
+  "senior": "Senior",
+  "seniorPage": {
+  "title": "👵 Senior Citizen Assistance",
+  "description": "Information about senior citizen schemes, benefits, and support services will appear here."
+},
+  "howItWorksTitle": "How Legal Assistance Works",
+  "howItWorksDesc": "No appointments or waiting rooms—get guidance anytime, anywhere.",
+  "step1Title": "Step 1: Ask Your Question",
+  "step1Desc": "Type or speak your legal query in simple language. No complex legal terms required.",
+  "step2Title": "Step 2: AI Analysis",
+  "step2Desc": "Our AI evaluates your query against Indian laws, regulations, and precedents.",
+  "step3Title": "Step 3: Get Guidance",
+  "step3Desc": "Receive actionable advice that helps you understand your legal options clearly.",
+  "faqTitle": "Frequently Asked Questions",
+  "faqDesc": "Have questions about JanSeva services? Click a question to view the answer.",
+  "faq1Question": "Is JanSeva free for all citizens?",
+  "faq1Answer": "Yes! Most services provided on JanSeva are free for Indian citizens.",
+  "faq2Question": "Do I need to create an account to use JanSeva?",
+  "faq2Answer": "Some features require signing in, but general information and search are accessible without an account.",
+  "faq3Question": "Which services can I access through JanSeva?",
+  "faq3Answer": "You can access legal guidance, healthcare information, education support, farmer schemes, and senior citizen aid.",
+  "faq4Question": "Is the AI assistant a substitute for legal or medical professionals?",
+  "faq4Answer": "No. The AI provides guidance and information but is not a replacement for professional legal, medical, or government advice.",
+  "faq5Question": "How can I report an issue or provide feedback?",
+  "faq5Answer": "Use the Contact or Help section on JanSeva to submit your queries or feedback.",
+  "viewAllFaqs": "View all FAQs",
+  "faqPage": {
+  "title": "All FAQs",
+  "faq1Question": "Is JanSeva free for all citizens?",
+  "faq1Answer": "Yes! Most services provided on JanSeva are free of charge for Indian citizens.",
+
+  "faq2Question": "Do I need an account to use JanSeva?",
+  "faq2Answer": "Some features, like tracking your queries or submitting requests, require signing in. General information and searches are accessible without an account.",
+
+  "faq3Question": "Which services can I access through JanSeva?",
+  "faq3Answer": "You can access services related to legal guidance, healthcare, education support, farmer schemes, senior citizen aid, and citizen grievance reporting.",
+
+  "faq4Question": "How can I submit a complaint or feedback?",
+  "faq4Answer": "Use the Help or Contact section to submit complaints, suggestions, or feedback. You will receive a reference number for tracking.",
+
+  "faq5Question": "Can I track the status of my request or query?",
+  "faq5Answer": "Yes. After logging in, you can track the status of all your submitted requests or queries from the dashboard.",
+
+  "faq6Question": "Is my personal information secure?",
+  "faq6Answer": "Yes. JanSeva uses secure encryption and follows strict privacy policies to protect all citizen data.",
+
+  "faq7Question": "Which government schemes are covered in JanSeva?",
+  "faq7Answer": "JanSeva provides information on central and state government schemes including health, education, agriculture, social welfare, and senior citizen benefits.",
+
+  "faq8Question": "Is the AI assistant a substitute for a professional?",
+  "faq8Answer": "No. The AI provides guidance and information, but it is not a replacement for professional legal, medical, or government advice.",
+
+  "faq9Question": "Can I access JanSeva on mobile?",
+  "faq9Answer": "Yes. JanSeva is mobile-friendly and works on all modern smartphones and tablets.",
+
+  "faq10Question": "Who can benefit from JanSeva?",
+  "faq10Answer": "All Indian citizens seeking information or guidance about government services, legal help, healthcare, education, or social welfare can benefit from JanSeva."
+},
+  "footerEmail": "Email: support@janseva.in",
+  "footerHelpline": "Helpline: 1800-XXX-XXXX"
+}
